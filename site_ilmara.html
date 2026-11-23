@@ -3,10 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ilmara | Imóveis em Freguesia do Ó, Patriarca e Tiquatira</title>
+    <title>VILMA IMÓVEIS</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .card-imovel {
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-imovel:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+        }
+
+        .card-img-container {
+            width: 100%;
+            height: 230px;
+            overflow: hidden;
+        }
+
+        .card-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.4s ease;
+        }
+
+        .card-imovel:hover .card-img-container img {
+            transform: scale(1.05);
+        }
+
+        .card-book-link {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .card-book-link::after {
+            content: "Abrir book digital";
+            position: absolute;
+            left: 50%;
+            bottom: 14px;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            background: rgba(15, 23, 42, 0.92);
+            color: #ffffff;
+            border-radius: 999px;
+            padding: 8px 14px;
+            font-size: 12px;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .card-imovel,
+            .card-img-container img {
+                transition: none;
+            }
+
+            .card-imovel:hover,
+            .card-imovel:hover .card-img-container img {
+                transform: none;
+            }
+        }
+    </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
 
@@ -14,7 +78,9 @@
     <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <img src="foto%20de%20perfil/foto%20perfil.jpeg" alt="Ilmara, corretora de imóveis" class="w-12 h-12 rounded-full object-cover object-[50%_18%] shadow-md">
+                <div class="group relative h-12 w-12 shrink-0 overflow-hidden rounded-full shadow-md">
+                    <img src="foto%20de%20perfil/vilma-perfil.jpeg" alt="Ilmara, corretora de imóveis" class="h-full w-full object-cover object-[50%_18%] transition-transform duration-300 group-hover:scale-125 motion-reduce:transition-none">
+                </div>
                 <div>
                     <span class="block font-bold text-lg text-slate-900 leading-tight">Ilmara Corretora</span>
                     <span class="text-xs text-amber-600 font-semibold uppercase tracking-wider">Especialista MCMV</span>
@@ -49,7 +115,7 @@
                     Seu apê, <span class="text-amber-400">mais perto!</span>
                 </h1>
                 <p class="text-lg text-slate-300 max-w-xl mx-auto lg:mx-0">
-                    Encontre seu apartamento em Freguesia do Ó, Patriarca ou Tiquatira. Fale comigo para conhecer as opções e fazer uma simulação sem compromisso.
+                    Encontre seu apartamento nas Zonas: Norte,Leste, Sul e Oeste. Fale comigo para conhecer as opções e fazer uma simulação sem compromisso.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
                     <a href="https://wa.me/5511969574820?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20simula%C3%A7%C3%A3o%20de%20cr%C3%A9dito." target="_blank" rel="noopener noreferrer" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-8 py-4 rounded-xl shadow-lg transition text-center flex items-center justify-center gap-2">
@@ -62,8 +128,18 @@
             </div>
 
             <!-- Material de divulgação da corretora -->
-            <div class="relative flex justify-center">
-                <img src="foto%20de%20perfil/foto%20perfil.jpeg" alt="Ilmara, corretora de imóveis especialista em Minha Casa Minha Vida" class="w-full max-w-md max-h-[600px] object-contain rounded-3xl shadow-2xl">
+            <div class="relative flex justify-center lg:justify-end">
+                <div aria-hidden="true" class="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber-400/20 blur-3xl"></div>
+                <div aria-hidden="true" class="absolute right-2 top-8 h-28 w-28 rounded-full border-[10px] border-amber-400/20"></div>
+                <div class="relative w-full max-w-sm rounded-[2rem] bg-gradient-to-br from-amber-300 via-white to-amber-600 p-2 shadow-2xl transition-transform duration-500 hover:-translate-y-1">
+                    <img src="foto%20de%20perfil/foto%20perfil.jpeg" alt="Ilmara, corretora de imóveis especialista em Minha Casa Minha Vida" class="block aspect-[2/3] max-h-[600px] w-full rounded-[1.6rem] object-cover object-[50%_18%]">
+                    <div class="absolute bottom-6 left-5 flex items-center gap-3 rounded-2xl border border-white/70 bg-white/95 px-4 py-3 shadow-lg backdrop-blur">
+                        <span class="flex h-10 w-10 items-center justify-center rounded-full bg-amber-100 text-amber-700">
+                            <i class="fa-solid fa-house-chimney-heart"></i>
+                        </span>
+                        <span class="text-sm font-bold text-slate-900">Atendimento humanizado</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -75,7 +151,7 @@
                 <h2 class="text-3xl font-bold text-slate-900">Compromisso com o Seu Futuro</h2>
                 <div class="w-20 h-1 bg-amber-500 mx-auto rounded-full"></div>
                 <p class="text-slate-600 text-lg">
-                    Prazer, sou a <strong>Ilmara</strong>, corretora de imóveis especialista no programa <strong>Minha Casa Minha Vida</strong>. Atendo quem busca apartamento em <strong>Freguesia do Ó, Patriarca e Tiquatira</strong>, com atendimento próximo e simulação sem compromisso.
+                    Prazer, sou a <strong>Ilmara</strong>, corretora de imóveis especialista no programa <strong>Minha Casa Minha Vida</strong>. Atendo quem busca apartamento nas <strong>Zonas: Norte,Leste, Sul e Oeste</strong>, com atendimento próximo e simulação sem compromisso.
                 </p>
             </div>
         </div>
@@ -89,16 +165,16 @@
                 <p class="text-slate-600">Confira os empreendimentos divulgados e fale comigo para consultar valores e disponibilidade atualizados.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition border border-slate-200 flex flex-col">
-                    <div class="h-64 bg-slate-100 flex items-center justify-center">
+            <div id="vitrine-regioes" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-imovel bg-white overflow-hidden border border-slate-200 flex flex-col">
+                    <div class="card-img-container bg-slate-100 flex items-center justify-center">
                         <img src="logo%20de%20divulga%C3%A7%C3%A3o/freguesia%20do%20%C3%B3.jpeg" alt="Divulgação de apartamentos em Freguesia do Ó" class="w-full h-full object-contain">
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
                         <div>
                             <h3 class="font-bold text-xl text-slate-900 mb-1">Freguesia do Ó</h3>
                             <p class="text-sm text-slate-500 mb-3"><i class="fa-solid fa-map-pin text-amber-600"></i> Próximo às futuras estações Itaberaba e Piquiri</p>
-                            <p class="text-slate-600 text-sm">Apartamentos de 2 dormitórios, lazer completo e opção de vaga de garagem. No material: a partir de R$ 285 mil.</p>
+                            <p class="text-slate-600 text-sm">Apartamentos de 2 dormitórios, lazer completo e opção de vaga de garagem. <strong class="text-slate-900">Unidades a partir de R$ 285 mil.</strong></p>
                         </div>
                         <a href="https://wa.me/5511969574820?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20apartamentos%20em%20Freguesia%20do%20%C3%93." target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-600 text-white font-semibold py-3 rounded-xl transition text-center text-sm shadow">
                             Consultar disponibilidade
@@ -106,15 +182,17 @@
                     </div>
                 </div>
 
-                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition border border-slate-200 flex flex-col">
-                    <div class="h-64 bg-slate-100 flex items-center justify-center">
-                        <img src="logo%20de%20divulga%C3%A7%C3%A3o/patriarca.jpeg" alt="Divulgação de apartamentos em Patriarca" class="w-full h-full object-contain">
+                <div class="card-imovel bg-white overflow-hidden border border-slate-200 flex flex-col">
+                    <div class="card-img-container bg-slate-100 flex items-center justify-center">
+                        <a class="card-book-link" href="pdf%20campanha/Paper-Step_v3.pdf" target="_blank" rel="noopener noreferrer" aria-label="Abrir o book digital do STEP Patriarca">
+                            <img src="logo%20de%20divulga%C3%A7%C3%A3o/patriarca-book-cover.jpeg" alt="Capa do book digital do empreendimento STEP Patriarca" class="w-full h-full object-contain">
+                        </a>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
                         <div>
                             <h3 class="font-bold text-xl text-slate-900 mb-1">Patriarca</h3>
                             <p class="text-sm text-slate-500 mb-3"><i class="fa-solid fa-map-pin text-amber-600"></i> Ao lado da estação Patriarca</p>
-                            <p class="text-slate-600 text-sm">Opções de 1 e 2 dormitórios, opção com varanda e lazer completo. No material: a partir de R$ 260 mil.</p>
+                            <p class="text-slate-600 text-sm">Opções de 1 e 2 dormitórios, opção com varanda e lazer completo. <strong class="text-slate-900">Unidades a partir de R$ 260 mil.</strong></p>
                         </div>
                         <a href="https://wa.me/5511969574820?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20apartamentos%20em%20Patriarca." target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-600 text-white font-semibold py-3 rounded-xl transition text-center text-sm shadow">
                             Consultar disponibilidade
@@ -122,20 +200,125 @@
                     </div>
                 </div>
 
-                <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition border border-slate-200 flex flex-col">
-                    <div class="h-64 bg-slate-100 flex items-center justify-center">
-                        <img src="logo%20de%20divulga%C3%A7%C3%A3o/verd%C3%AD.jpeg" alt="Divulgação do empreendimento Verdi Tiquatira" class="w-full h-full object-contain">
+                <div class="card-imovel bg-white overflow-hidden border border-slate-200 flex flex-col">
+                    <div class="card-img-container bg-slate-100 flex items-center justify-center">
+                        <a class="card-book-link" href="pdf%20campanha/Book-A3-Verdi-Digital.pdf" target="_blank" rel="noopener noreferrer" aria-label="Abrir o book digital do Verdi Tiquatira">
+                            <img src="logo%20de%20divulga%C3%A7%C3%A3o/verdi-book-cover.jpeg" alt="Capa do book digital do empreendimento Verdi Tiquatira" class="w-full h-full object-contain">
+                        </a>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
                         <div>
                             <h3 class="font-bold text-xl text-slate-900 mb-1">Verdi Tiquatira</h3>
                             <p class="text-sm text-slate-500 mb-3"><i class="fa-solid fa-map-pin text-amber-600"></i> Penha, Zona Leste</p>
-                            <p class="text-slate-600 text-sm">Apartamentos de 2 dormitórios, terraço, opção de vaga e mais de 20 itens de lazer. No material: a partir de R$ 276 mil.</p>
+                            <p class="text-slate-600 text-sm">Apartamentos de 2 dormitórios, terraço, opção de vaga e mais de 20 itens de lazer. <strong class="text-slate-900">Unidades a partir de R$ 276 mil.</strong></p>
                         </div>
                         <a href="https://wa.me/5511969574820?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Verdi%20Tiquatira." target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-600 text-white font-semibold py-3 rounded-xl transition text-center text-sm shadow">
                             Consultar disponibilidade
                         </a>
                     </div>
+                </div>
+
+                <div class="card-imovel bg-white overflow-hidden border border-slate-200 flex flex-col">
+                    <div class="card-img-container bg-slate-100 flex items-center justify-center">
+                        <a class="card-book-link" href="pdf%20campanha/ECON-ClassPrime-Book.pdf" target="_blank" rel="noopener noreferrer" aria-label="Abrir o book digital do Class Prime">
+                            <img src="logo%20de%20divulga%C3%A7%C3%A3o/classprime-book-cover.jpeg" alt="Capa do book digital do Class Prime" class="w-full h-full object-contain">
+                        </a>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-bold text-xl text-slate-900 mb-1">Class Prime</h3>
+                            <p class="text-sm text-slate-500 mb-3"><i class="fa-solid fa-map-pin text-amber-600"></i> Vila Prudente / Vila Independência, Zona Leste</p>
+                            <p class="text-slate-600 text-sm">Apartamentos de 2 e 3 dormitórios com suíte, terraço (opções com churrasqueira) e lazer completo elevado, a 5 min da Estação Vila Prudente.</p>
+                        </div>
+                        <a href="https://wa.me/5511969574820?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Class%20Prime." target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-600 text-white font-semibold py-3 rounded-xl transition text-center text-sm shadow">
+                            Consultar disponibilidade
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card-imovel bg-white overflow-hidden border border-slate-200 flex flex-col">
+                    <div class="card-img-container bg-slate-100 flex items-center justify-center">
+                        <a class="card-book-link" href="pdf%20campanha/Gran-Sky.pdf" target="_blank" rel="noopener noreferrer" aria-label="Abrir o book digital do Gran Sky">
+                            <img src="logo%20de%20divulga%C3%A7%C3%A3o/gran-sky-book-cover.jpeg" alt="Capa do book digital do Gran Sky" class="w-full h-full object-contain">
+                        </a>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-bold text-xl text-slate-900 mb-1">Gran Sky</h3>
+                            <p class="text-sm text-slate-500 mb-3"><i class="fa-solid fa-map-pin text-amber-600"></i> Vila Carrão, Zona Leste</p>
+                            <p class="text-slate-600 text-sm">Apartamentos de 2 e 3 dormitórios com suíte, terraço (opções com churrasqueira a carvão) e lazer completo em torre de 35 andares.</p>
+                        </div>
+                        <a href="https://wa.me/5511969574820?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Gran%20Sky." target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-600 text-white font-semibold py-3 rounded-xl transition text-center text-sm shadow">
+                            Consultar disponibilidade
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card-imovel bg-white overflow-hidden border border-slate-200 flex flex-col">
+                    <div class="card-img-container bg-slate-100 flex items-center justify-center">
+                        <a class="card-book-link" href="pdf%20campanha/Gran-Spot.pdf" target="_blank" rel="noopener noreferrer" aria-label="Abrir o book digital do Gran Spot">
+                            <img src="logo%20de%20divulga%C3%A7%C3%A3o/gran-spot-book-cover.jpeg" alt="Capa do book digital do Gran Spot" class="w-full h-full object-contain">
+                        </a>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-bold text-xl text-slate-900 mb-1">Gran Spot</h3>
+                            <p class="text-sm text-slate-500 mb-3"><i class="fa-solid fa-map-pin text-amber-600"></i> Vila Carrão, Zona Leste</p>
+                            <p class="text-slate-600 text-sm">Apartamentos de 2 dormitórios (37 m² e 39 m²) com terraço e lazer completo a 2 min da futura Estação Guilherme Giorgi (Linha Verde).</p>
+                        </div>
+                        <a href="https://wa.me/5511969574820?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Gran%20Spot." target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-600 text-white font-semibold py-3 rounded-xl transition text-center text-sm shadow">
+                            Consultar disponibilidade
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card-imovel bg-white overflow-hidden border border-slate-200 flex flex-col">
+                    <div class="card-img-container bg-slate-100 flex items-center justify-center"><a class="card-book-link" href="pdf%20campanha/WIN-Ibitirama.pdf" target="_blank" rel="noopener noreferrer" aria-label="Abrir o book digital do WIN Ibitirama"><img src="logo%20de%20divulga%C3%A7%C3%A3o/WIN-Ibitirama-cover.jpeg" alt="Capa do book digital do WIN Ibitirama" class="w-full h-full object-contain"></a></div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4"><div><h3 class="font-bold text-xl text-slate-900 mb-1">WIN Ibitirama</h3><p class="text-sm text-slate-500 mb-3"><i class="fa-solid fa-map-pin text-amber-600"></i> Vila Prudente, Zona Leste</p><p class="text-slate-600 text-sm">Apartamentos de 2 e 3 dormitórios (44 m², 54 m² com suíte e 66 m² com suíte) com terraço gourmet integrado à cozinha e lazer de clube em diversos pavimentos a 300 m do Metrô Vila Prudente.</p></div><a href="https://wa.me/5511969574820?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20WIN%20Ibitirama." target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-600 text-white font-semibold py-3 rounded-xl transition text-center text-sm shadow">Consultar disponibilidade</a></div>
+                </div>
+                <div class="card-imovel bg-white overflow-hidden border border-slate-200 flex flex-col">
+                    <div class="card-img-container bg-slate-100 flex items-center justify-center"><a class="card-book-link" href="pdf%20campanha/VERO-Itaquera.pdf" target="_blank" rel="noopener noreferrer" aria-label="Abrir o book digital do VERO Itaquera"><img src="logo%20de%20divulga%C3%A7%C3%A3o/VERO-Itaquera-cover.jpeg" alt="Capa do book digital do VERO Itaquera" class="w-full h-full object-contain"></a></div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4"><div><h3 class="font-bold text-xl text-slate-900 mb-1">VERO Itaquera</h3><p class="text-sm text-slate-500 mb-3"><i class="fa-solid fa-map-pin text-amber-600"></i> Itaquera, Zona Leste</p><p class="text-slate-600 text-sm">Apartamentos com terraço: opções de 1 dormitório de 26 m² e 2 dormitórios de 38 m² e 41 m², com lazer completo perto da Estação Dom Bosco, da Radial Leste e da Avenida Jacu-Pêssego.</p></div><a href="https://wa.me/5511969574820?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20VERO%20Itaquera." target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-600 text-white font-semibold py-3 rounded-xl transition text-center text-sm shadow">Consultar disponibilidade</a></div>
+                </div>
+                <div class="card-imovel bg-white overflow-hidden border border-slate-200 flex flex-col">
+                    <div class="card-img-container bg-slate-100 flex items-center justify-center"><a class="card-book-link" href="pdf%20campanha/LINK-Sapopemba.pdf" target="_blank" rel="noopener noreferrer" aria-label="Abrir o book digital do LINK Sapopemba"><img src="logo%20de%20divulga%C3%A7%C3%A3o/LINK-Sapopemba-cover.jpeg" alt="Capa do book digital do LINK Sapopemba" class="w-full h-full object-contain"></a></div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4"><div><h3 class="font-bold text-xl text-slate-900 mb-1">LINK Sapopemba</h3><p class="text-sm text-slate-500 mb-3"><i class="fa-solid fa-map-pin text-amber-600"></i> Vila Tolstói / Sapopemba, Zona Leste</p><p class="text-slate-600 text-sm">Apartamentos de 2 dormitórios com terraço (37 m² e 39 m²), vaga e lazer completo a 700 m da Estação Vila Tolstói, enquadrado no Minha Casa Minha Vida com uso do FGTS.</p></div><a href="https://wa.me/5511969574820?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20LINK%20Sapopemba." target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-600 text-white font-semibold py-3 rounded-xl transition text-center text-sm shadow">Consultar disponibilidade</a></div>
+                </div>
+                <div class="card-imovel bg-white overflow-hidden border border-slate-200 flex flex-col">
+                    <div class="card-img-container bg-slate-100 flex items-center justify-center"><a class="card-book-link" href="pdf%20campanha/FORT-Aricanduva.pdf" target="_blank" rel="noopener noreferrer" aria-label="Abrir o book digital do FORT Aricanduva"><img src="logo%20de%20divulga%C3%A7%C3%A3o/FORT-Aricanduva-cover.jpeg" alt="Capa do book digital do FORT Aricanduva" class="w-full h-full object-contain"></a></div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4"><div><h3 class="font-bold text-xl text-slate-900 mb-1">FORT Aricanduva</h3><p class="text-sm text-slate-500 mb-3"><i class="fa-solid fa-map-pin text-amber-600"></i> Aricanduva, Zona Leste</p><p class="text-slate-600 text-sm">Apartamentos de 2 dormitórios com terraço gourmet (40 a 43 m² e opções com suíte de 47 a 50 m²) e lazer completo próximo às avenidas Aricanduva e Itaquera.</p></div><a href="https://wa.me/5511969574820?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20FORT%20Aricanduva." target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-600 text-white font-semibold py-3 rounded-xl transition text-center text-sm shadow">Consultar disponibilidade</a></div>
+                </div>
+                <div class="card-imovel bg-white overflow-hidden border border-slate-200 flex flex-col">
+                    <div class="card-img-container bg-slate-100 flex items-center justify-center"><a class="card-book-link" href="pdf%20campanha/VIBE-Aricanduva.pdf" target="_blank" rel="noopener noreferrer" aria-label="Abrir o book digital do VIBE Aricanduva"><img src="logo%20de%20divulga%C3%A7%C3%A3o/VIBE-Aricanduva-cover.jpeg" alt="Capa do book digital do VIBE Aricanduva" class="w-full h-full object-contain"></a></div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4"><div><h3 class="font-bold text-xl text-slate-900 mb-1">VIBE Aricanduva</h3><p class="text-sm text-slate-500 mb-3"><i class="fa-solid fa-map-pin text-amber-600"></i> Aricanduva, Zona Leste</p><p class="text-slate-600 text-sm">Apartamentos de 2 dormitórios com terraço (37 m² e 39 m²) e lazer completo a 5 minutos do Shopping Aricanduva, com uso do FGTS.</p></div><a href="https://wa.me/5511969574820?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20VIBE%20Aricanduva." target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-600 text-white font-semibold py-3 rounded-xl transition text-center text-sm shadow">Consultar disponibilidade</a></div>
+                </div>
+                <div class="card-imovel bg-white overflow-hidden border border-slate-200 flex flex-col">
+                    <div class="card-img-container bg-slate-100 flex items-center justify-center"><a class="card-book-link" href="pdf%20campanha/LIV-Parque-do-Carmo.pdf" target="_blank" rel="noopener noreferrer" aria-label="Abrir o book digital do LIV Parque do Carmo"><img src="logo%20de%20divulga%C3%A7%C3%A3o/LIV-Parque-do-Carmo-cover.jpeg" alt="Capa do book digital do LIV Parque do Carmo" class="w-full h-full object-contain"></a></div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4"><div><h3 class="font-bold text-xl text-slate-900 mb-1">LIV Parque do Carmo</h3><p class="text-sm text-slate-500 mb-3"><i class="fa-solid fa-map-pin text-amber-600"></i> Jardim Egle / Parque do Carmo, Zona Leste</p><p class="text-slate-600 text-sm">Apartamentos de 2 dormitórios com terraço (37 m²), lazer completo e opção de vaga a 8 minutos do Parque do Carmo, com uso do FGTS.</p></div><a href="https://wa.me/5511969574820?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20LIV%20Parque%20do%20Carmo." target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-600 text-white font-semibold py-3 rounded-xl transition text-center text-sm shadow">Consultar disponibilidade</a></div>
+                </div>
+                <div class="card-imovel bg-white overflow-hidden border border-slate-200 flex flex-col">
+                    <div class="card-img-container bg-slate-100 flex items-center justify-center"><a class="card-book-link" href="pdf%20campanha/ECON-Class-Select.pdf" target="_blank" rel="noopener noreferrer" aria-label="Abrir o book digital do ECON Class Select"><img src="logo%20de%20divulga%C3%A7%C3%A3o/ECON-Class-Select-cover.jpeg" alt="Capa do book digital do ECON Class Select" class="w-full h-full object-contain"></a></div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4"><div><h3 class="font-bold text-xl text-slate-900 mb-1">ECON Class Select</h3><p class="text-sm text-slate-500 mb-3"><i class="fa-solid fa-map-pin text-amber-600"></i> Vila Independência / Vila Prudente, Zona Leste</p><p class="text-slate-600 text-sm">Apartamentos de 2 dormitórios com terraço (37 m² e 38 m²) e lazer completo em torre alta com fácil acesso ao metrô e à região da Vila Prudente.</p></div><a href="https://wa.me/5511969574820?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20ECON%20Class%20Select." target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-600 text-white font-semibold py-3 rounded-xl transition text-center text-sm shadow">Consultar disponibilidade</a></div>
+                </div>
+                <div class="card-imovel bg-white overflow-hidden border border-slate-200 flex flex-col">
+                    <div class="card-img-container bg-slate-100 flex items-center justify-center"><a class="card-book-link" href="pdf%20campanha/LUMI-Spark.pdf" target="_blank" rel="noopener noreferrer" aria-label="Abrir o book digital do LUMI Spark"><img src="logo%20de%20divulga%C3%A7%C3%A3o/LUMI-Spark-cover.jpeg" alt="Capa do book digital do LUMI Spark" class="w-full h-full object-contain"></a></div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4"><div><h3 class="font-bold text-xl text-slate-900 mb-1">LUMI Spark</h3><p class="text-sm text-slate-500 mb-3"><i class="fa-solid fa-map-pin text-amber-600"></i> Vila Matilde / Penha, Zona Leste</p><p class="text-slate-600 text-sm">Apartamentos de 2 dormitórios com terraço (38 m², 39 m² e 40 m²) e lazer completo em torre de 24 andares próximo à Estação Vila Matilde, com uso do FGTS.</p></div><a href="https://wa.me/5511969574820?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20LUMI%20Spark." target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-600 text-white font-semibold py-3 rounded-xl transition text-center text-sm shadow">Consultar disponibilidade</a></div>
+                </div>
+                <div class="card-imovel bg-white overflow-hidden border border-slate-200 flex flex-col">
+                    <div class="card-img-container bg-slate-100 flex items-center justify-center"><a class="card-book-link" href="pdf%20campanha/LUMI-Sphere.pdf" target="_blank" rel="noopener noreferrer" aria-label="Abrir o book digital do LUMI Sphere"><img src="logo%20de%20divulga%C3%A7%C3%A3o/LUMI-Sphere-cover.jpeg" alt="Capa do book digital do LUMI Sphere" class="w-full h-full object-contain"></a></div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4"><div><h3 class="font-bold text-xl text-slate-900 mb-1">LUMI Sphere</h3><p class="text-sm text-slate-500 mb-3"><i class="fa-solid fa-map-pin text-amber-600"></i> Vila Matilde / Penha, Zona Leste</p><p class="text-slate-600 text-sm">Apartamentos de 2 e 3 dormitórios com suíte, terraço com churrasqueira a carvão, depósito privativo e lazer completo em torre de 29 andares.</p></div><a href="https://wa.me/5511969574820?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20LUMI%20Sphere." target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-600 text-white font-semibold py-3 rounded-xl transition text-center text-sm shadow">Consultar disponibilidade</a></div>
+                </div>
+                <div class="card-imovel bg-white overflow-hidden border border-slate-200 flex flex-col">
+                    <div class="card-img-container bg-slate-100 flex items-center justify-center"><a class="card-book-link" href="pdf%20campanha/RED-Guilhermina.pdf" target="_blank" rel="noopener noreferrer" aria-label="Abrir o book digital do RED Guilhermina"><img src="logo%20de%20divulga%C3%A7%C3%A3o/RED-Guilhermina-cover.jpeg" alt="Capa do book digital do RED Guilhermina" class="w-full h-full object-contain"></a></div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4"><div><h3 class="font-bold text-xl text-slate-900 mb-1">RED Guilhermina</h3><p class="text-sm text-slate-500 mb-3"><i class="fa-solid fa-map-pin text-amber-600"></i> Vila Esperança / Guilhermina, Zona Leste</p><p class="text-slate-600 text-sm">Apartamentos de 2 e 3 dormitórios com suíte, terraço gourmet com churrasqueira a carvão e lazer completo a 200 m da Estação Guilhermina-Esperança.</p></div><a href="https://wa.me/5511969574820?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20RED%20Guilhermina." target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-600 text-white font-semibold py-3 rounded-xl transition text-center text-sm shadow">Consultar disponibilidade</a></div>
+                </div>
+                <div class="card-imovel bg-white overflow-hidden border border-slate-200 flex flex-col">
+                    <div class="card-img-container bg-slate-100 flex items-center justify-center"><a class="card-book-link" href="pdf%20campanha/NORT-Limao.pdf" target="_blank" rel="noopener noreferrer" aria-label="Abrir o book digital do NORT Limão"><img src="logo%20de%20divulga%C3%A7%C3%A3o/NORT-Limao-cover.jpeg" alt="Capa do book digital do NORT Limão" class="w-full h-full object-contain"></a></div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4"><div><h3 class="font-bold text-xl text-slate-900 mb-1">NORT Limão</h3><p class="text-sm text-slate-500 mb-3"><i class="fa-solid fa-map-pin text-amber-600"></i> Limão, Zona Norte</p><p class="text-slate-600 text-sm">Apartamentos de 2 dormitórios (38 m², 39 m² e 45 m²) com terraço e lazer completo em terreno de 5.200 m² próximo ao CTN e a futuras estações.</p></div><a href="https://wa.me/5511969574820?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20NORT%20Lim%C3%A3o." target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-600 text-white font-semibold py-3 rounded-xl transition text-center text-sm shadow">Consultar disponibilidade</a></div>
+                </div>
+                <div class="card-imovel bg-white overflow-hidden border border-slate-200 flex flex-col">
+                    <div class="card-img-container bg-slate-100 flex items-center justify-center"><a class="card-book-link" href="pdf%20campanha/GREEN-Park-Embira.pdf" target="_blank" rel="noopener noreferrer" aria-label="Abrir o book digital do GREEN PARK EMBIRA"><img src="logo%20de%20divulga%C3%A7%C3%A3o/GREEN-Park-Embira-cover.jpeg" alt="Capa do book digital do GREEN PARK EMBIRA" class="w-full h-full object-contain"></a></div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4"><div><h3 class="font-bold text-xl text-slate-900 mb-1">GREEN PARK EMBIRA</h3><p class="text-sm text-slate-500 mb-3"><i class="fa-solid fa-map-pin text-amber-600"></i> Freguesia do Ó, Zona Norte</p><p class="text-slate-600 text-sm">Apartamentos de 2 dormitórios com terraço (opção com suíte e churrasqueira a carvão) e lazer completo com opção de vaga e FGTS.</p></div><a href="https://wa.me/5511969574820?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20GREEN%20PARK%20Embira." target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-600 text-white font-semibold py-3 rounded-xl transition text-center text-sm shadow">Consultar disponibilidade</a></div>
                 </div>
             </div>
             <p class="text-center text-xs text-slate-500 mt-8">Valores e condições são os informados nos materiais de divulgação e podem mudar. Consulte disponibilidade e condições atualizadas pelo WhatsApp.</p>
@@ -191,7 +374,7 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
             <h2 class="text-3xl sm:text-4xl font-bold">Pronto para dar o primeiro passo rumo ao seu apê?</h2>
             <p class="text-slate-300 max-w-xl mx-auto">
-                Tire suas dúvidas, faça uma simulação gratuita ou consulte os imóveis em Freguesia do Ó, Patriarca e Tiquatira.
+                Tire suas dúvidas, faça uma simulação gratuita ou consulte os imóveis nas Zonas: Norte,Leste, Sul e Oeste.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4 pt-4">
                 <a href="https://wa.me/5511969574820?text=Ol%C3%A1!%20Tenho%20interesse%20em%20um%20im%C3%B3vel.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg transition flex items-center justify-center gap-3 text-lg">
@@ -204,10 +387,144 @@
     <!-- RODAPÉ -->
     <footer class="bg-slate-950 text-slate-500 py-8 text-center text-sm border-t border-slate-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p>&copy; 2026 Ilmara Corretora de Imóveis. Todos os direitos reservados.</p>
+            <p>&copy; 2026 Ilmara Corretora de Imóveis. CRECI 236899F. Todos os direitos reservados.</p>
             <p class="text-xs text-slate-400">Especialista Minha Casa Minha Vida</p>
         </div>
     </footer>
+
+    <script>
+        (() => {
+            const container = document.getElementById("vitrine-regioes");
+            if (!container) return;
+
+            const cards = Array.from(container.querySelectorAll(".card-imovel"));
+            const neighborhoodMap = {
+                "Freguesia do Ó": "freguesia",
+                "GREEN PARK EMBIRA": "freguesia",
+                "NORT Limão": "limao",
+                "Verdi Tiquatira": "penha",
+                "RED Guilhermina": "penha",
+                "Patriarca": "matilde-patriarca",
+                "LUMI Sphere": "matilde-patriarca",
+                "LUMI Spark": "matilde-patriarca",
+                "Gran Spot": "vilacarrao",
+                "Gran Sky": "vilacarrao",
+                "VIBE Aricanduva": "aricanduva",
+                "FORT Aricanduva": "aricanduva",
+                "WIN Ibitirama": "vila-prudente",
+                "ECON Class Select": "vila-prudente",
+                "Class Prime": "vila-prudente",
+                "LINK Sapopemba": "sapopemba",
+                "VERO Itaquera": "itaquera-carmo",
+                "LIV Parque do Carmo": "itaquera-carmo"
+            };
+
+            const groups = {
+                north: {
+                    freguesia: [],
+                    limao: []
+                },
+                east: {
+                    penha: [],
+                    "matilde-patriarca": [],
+                    vilacarrao: [],
+                    aricanduva: [],
+                    "vila-prudente": [],
+                    sapopemba: [],
+                    "itaquera-carmo": []
+                },
+                south: {},
+                west: {}
+            };
+
+            cards.forEach(card => {
+                const title = card.querySelector("h3")?.textContent.trim();
+                const neighborhood = neighborhoodMap[title];
+                if (!neighborhood) return;
+
+                if (groups.north[neighborhood]) groups.north[neighborhood].push(card);
+                if (groups.east[neighborhood]) groups.east[neighborhood].push(card);
+            });
+
+            const regions = [
+                {
+                    key: "north",
+                    title: "Zona Norte",
+                    neighborhoods: [
+                        { key: "freguesia", title: "Freguesia do Ó", order: ["Freguesia do Ó", "GREEN PARK EMBIRA"] },
+                        { key: "limao", title: "Limão", order: ["NORT Limão"] }
+                    ]
+                },
+                {
+                    key: "east",
+                    title: "Zona Leste",
+                    neighborhoods: [
+                        { key: "penha", title: "Penha / Vila Esperança", order: ["Verdi Tiquatira", "RED Guilhermina"] },
+                        { key: "matilde-patriarca", title: "Vila Matilde / Patriarca", order: ["Patriarca", "LUMI Sphere", "LUMI Spark"] },
+                        { key: "vilacarrao", title: "Vila Carrão", order: ["Gran Spot", "Gran Sky"] },
+                        { key: "aricanduva", title: "Aricanduva", order: ["VIBE Aricanduva", "FORT Aricanduva"] },
+                        { key: "vila-prudente", title: "Vila Prudente / Vila Independência", order: ["WIN Ibitirama", "ECON Class Select", "Class Prime"] },
+                        { key: "sapopemba", title: "Sapopemba / Vila Tolstói", order: ["LINK Sapopemba"] },
+                        { key: "itaquera-carmo", title: "Itaquera / Parque do Carmo", order: ["VERO Itaquera", "LIV Parque do Carmo"] }
+                    ]
+                },
+                { key: "south", title: "Zona Sul", neighborhoods: [] },
+                { key: "west", title: "Zona Oeste", neighborhoods: [] }
+            ];
+
+            container.className = "space-y-16";
+            container.replaceChildren();
+
+            regions.forEach(region => {
+                const section = document.createElement("section");
+                section.innerHTML = `
+                    <div class="mb-8 flex items-center gap-4">
+                        <h3 class="text-2xl font-bold text-slate-900">${region.title}</h3>
+                        <div class="h-px flex-1 bg-slate-300"></div>
+                    </div>
+                `;
+
+                if (!region.neighborhoods.length) {
+                    const grid = document.createElement("div");
+                    grid.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8";
+                    grid.innerHTML = `
+                        <div class="card-imovel bg-white border border-slate-200 px-6 py-12 text-center flex flex-col items-center justify-center md:col-span-2 lg:col-span-1">
+                            <i class="fa-solid fa-clock text-3xl text-amber-500 mb-4"></i>
+                            <h4 class="font-bold text-xl text-slate-900 mb-2">Novidades em Breve!</h4>
+                            <p class="text-slate-600 text-sm">Novos empreendimentos da ${region.title} serão divulgados em breve.</p>
+                        </div>
+                    `;
+                    section.appendChild(grid);
+                } else {
+                    region.neighborhoods.forEach(neighborhood => {
+                        const neighborhoodSection = document.createElement("div");
+                        neighborhoodSection.className = "mb-10";
+                        neighborhoodSection.innerHTML = `
+                            <div class="mb-5 flex items-center gap-3">
+                                <h4 class="text-lg font-bold text-amber-700">${neighborhood.title}</h4>
+                                <div class="h-px flex-1 bg-slate-200"></div>
+                            </div>
+                        `;
+
+                        const neighborhoodCards = groups[region.key][neighborhood.key] || [];
+                        neighborhoodCards.sort((a, b) => {
+                            const aTitle = a.querySelector("h3")?.textContent.trim();
+                            const bTitle = b.querySelector("h3")?.textContent.trim();
+                            return neighborhood.order.indexOf(aTitle) - neighborhood.order.indexOf(bTitle);
+                        });
+
+                        const grid = document.createElement("div");
+                        grid.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8";
+                        neighborhoodCards.forEach(card => grid.appendChild(card));
+                        neighborhoodSection.appendChild(grid);
+                        section.appendChild(neighborhoodSection);
+                    });
+                }
+
+                container.appendChild(section);
+            });
+        })();
+    </script>
 
 </body>
 </html>
