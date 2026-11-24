@@ -168,22 +168,6 @@
             <div id="vitrine-regioes" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="card-imovel bg-white overflow-hidden border border-slate-200 flex flex-col">
                     <div class="card-img-container bg-slate-100 flex items-center justify-center">
-                        <img src="logo%20de%20divulga%C3%A7%C3%A3o/freguesia%20do%20%C3%B3.jpeg" alt="Divulgação de apartamentos em Freguesia do Ó" class="w-full h-full object-contain">
-                    </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
-                        <div>
-                            <h3 class="font-bold text-xl text-slate-900 mb-1">Freguesia do Ó</h3>
-                            <p class="text-sm text-slate-500 mb-3"><i class="fa-solid fa-map-pin text-amber-600"></i> Próximo às futuras estações Itaberaba e Piquiri</p>
-                            <p class="text-slate-600 text-sm">Apartamentos de 2 dormitórios, lazer completo e opção de vaga de garagem. <strong class="text-slate-900">Unidades a partir de R$ 285 mil.</strong></p>
-                        </div>
-                        <a href="https://wa.me/5511969574820?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20apartamentos%20em%20Freguesia%20do%20%C3%93." target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-600 text-white font-semibold py-3 rounded-xl transition text-center text-sm shadow">
-                            Consultar disponibilidade
-                        </a>
-                    </div>
-                </div>
-
-                <div class="card-imovel bg-white overflow-hidden border border-slate-200 flex flex-col">
-                    <div class="card-img-container bg-slate-100 flex items-center justify-center">
                         <a class="card-book-link" href="pdf%20campanha/Paper-Step_v3.pdf" target="_blank" rel="noopener noreferrer" aria-label="Abrir o book digital do STEP Patriarca">
                             <img src="logo%20de%20divulga%C3%A7%C3%A3o/patriarca-book-cover.jpeg" alt="Capa do book digital do empreendimento STEP Patriarca" class="w-full h-full object-contain">
                         </a>
@@ -399,7 +383,6 @@
 
             const cards = Array.from(container.querySelectorAll(".card-imovel"));
             const neighborhoodMap = {
-                "Freguesia do Ó": "freguesia",
                 "GREEN PARK EMBIRA": "freguesia",
                 "NORT Limão": "limao",
                 "Verdi Tiquatira": "penha",
@@ -451,7 +434,7 @@
                     key: "north",
                     title: "Zona Norte",
                     neighborhoods: [
-                        { key: "freguesia", title: "Freguesia do Ó", order: ["Freguesia do Ó", "GREEN PARK EMBIRA"] },
+                        { key: "freguesia", title: "Freguesia do Ó", order: ["GREEN PARK EMBIRA"] },
                         { key: "limao", title: "Limão", order: ["NORT Limão"] }
                     ]
                 },
